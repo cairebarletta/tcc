@@ -1,0 +1,129 @@
+% revisão teórica
+
+\chapter{Referencial Teórico}
+
+Neste capítulo serão apresentados em detalhe as definições, referências e teorias necessárias para o desenvolvimento e compreensão dos estudos e análises desenvolvidas no presente trabalho, bem como a apresentação de pesquisas em que técnicas de mineração textual foram aplicadas em problemas econômicos e na análise de sentimentos de bancos centrais. Na Seção \ref{section:importancia_BC} e em suas Subseções é discursado sobre a importância da comunicação e transparência do banco central, assim como elucidação sobre regimes de regras de inflação e atas do Copom. Já na Seção \ref{section:mineracao_textual} é apresentado o processo e relação da mineração textual com aplicações no âmbito econômico.
+ 
+\section{Importância da comunicação de um Banco Central} \label{section:importancia_BC}
+
+Pode-se definir a comunicação do banco central como qualquer quantidade e qualidade de informação disponibilizada ao público que está relaciona à condução da política monetária, em relação à atividade econômica e em relação à sinais da trajetória de políticas futuras, por parte do banco central \cite{blinder2008central}.
+
+A partir de 1987 até meados de 2004, foi observado na economia dos Estados Unidos da América (EUA), um período no \textit{Federal Reserve (Fed)}\footnote{Equivalente ao Banco Central no Brasil.} em que foi caracterizado por grande adesão por parte das declarações do \textit{Federal Open Market Committee (FOMC)}\footnote{Equivalente ao Copom no Brasil.} à comunicados sobre o momento vigente e perspectivas futuras. Anteriormente à esse período, era considerado que ao pegar o mercado de surpresa, teria-se um efeito mais eficaz da política monetária \cite{woodford2005central}.
+
+Como enunciam \citeonline[p.~7]{blinder2008central}, é cabível se chamar de uma "revolução no pensamento", o fato de partir-se de um ponto (início da década de 80) onde o banco central praticamente não se comunicava com os agentes, para outro ponto em que proclamou-se que um aumento na comunicação aumentaria a efetividade da política monetária (meados da década de 90) e depois para outro momento em que foi apontado que a essência da política monetária seria a "arte de gerenciar expectativas" (ou pelo menos em partes). Essas mudanças no jeito de pensar sobre a comunicação do banco central afetou a prática dele em si. 
+
+Nos EUA, o início da jornada acerca de maior transparência iniciou-se em 1994, quando o FOMC anunciou pela primeira vez suas decisões à respeito dos alvos-meta da taxa de juros. Em 1999, começou-se a publicar a tendenciosidade do Fed acerca das mudanças futuras e também a elaboração de comunicados mais completos. Em 2003, o Fed iniciou a anunciar os votos atrelados aos votantes após cada reunião, como também a explicitamente gerenciar expectativas ao declarar abertamente que manteria a taxa de juros em níveis baixos por um período considerável. 
+
+Entretanto, o Fed não lidera o caminho nessa questão, haja vista que outros bancos centrais ao redor do mundo ao longo do tempo vieram dando grande valor para sua comunicação, podendo ser citados o Banco Central da Nova Zelândia (BCNZ), o Banco Central da Inglaterra (BCI), o Banco Central da Noruega (BCN), o Banco Central da Suécia (BCS) e o Banco Central Europeu (BCE). Uma comunicação mais transparente e efetiva por parte dos bancos centrais realmente é uma convergência internacional \cite{blinder2008central}.
+
+Uma importante razão do crescimento de transparência é a noção estabelecida de que bancos centrais deveriam deter maior responsabilidade, tendo o dever de explicar não só seus atos, como também os motivos por detrás deles. Além disso, conforme ficou mais evidente que a condução das expectativas é um aparato útil da política monetária, a comunicação passou de um fardo a ser lidado para um instrumento chave dentre as ferramentas do Banco Central \cite{blinder2008central}.
+
+Além disso, \citeonline{woodford2005central}, concluiu que uma comunicação eficaz é pré-requisito básico na condução de política monetária por parte de qualquer banco central que visa ter sucesso em seus objetivos:
+
+\begin{citacao}
+
+Como os principais tomadores de decisão em uma economia olham para o futuro, os bancos centrais afetam a economia tanto por sua influência nas expectativas quanto por quaisquer efeitos mecânicos diretos da negociação do banco central no mercado por dinheiro de um dia para o outro. Como consequência, há boas razões para um banco central se comprometer com uma abordagem sistemática da política, que não apenas fornece uma estrutura explícita à tomada de decisões dentro do banco, mas que também é usada para explicar as decisões do banco ao público. \cite{woodford2005central}.
+
+\end{citacao}
+
+De acordo com a literatura desenvolvida com o passar do tempo, é de conhecimento geral o fato de que a comunicação do Banco Central é uma ferramenta muito poderosa em diversos sentidos, podendo ser citados alguns deles, como a ancoragem de expectativas do mercado, a expectativa no preço de ativos financeiros, a melhora na transparência e a previsibilidade da política monetária e um redutor de caminho para se obter uma maior estabilidade econômica \cite{blinder2000central, mishkin2000, bernanke2004monetary}.
+
+Não somente, por meio do trabalho desenvolvido por \citeonline{coenen2017communication}, observa-se que o crescimento e a popularização dos comunicados emitidos por bancos centrais, devem-se principalmente pela necessariedade de uma maior transparência na condução da política monetária, levando em consideração a busca em atingir níveis de inflação que estão dentro das metas, assim como o crescente nível de autonomia dos bancos centrais ao redor do mundo.
+
+\subsection{A teoria por trás da comunicação do banco central}
+
+Atualmente, é amplamente aceito na literatura que o poder de um banco central afetar a economia depende fortemente de sua capacidade de influênciar as expectativas do mercado acerca do trajeto futuro das taxas de juros, e não apenas de seus níveis no período em questão. De acordo com as teorias que tangem a estrutura a termo, as taxas de juros de longo prazo deveriam refletir a sequência de expectativas sobre o futuro das taxas \cite{blinder2008central}.
+
+Sendo assim, como aborda \citeonline{blinder2008central}, tem-se que a taxa de juros ($R_{t}$) do dia $n$ deve ser aproximadamente igual a:
+
+\begin{ceqn}
+\begin{align} \label{eq:ettj}
+R_{t} = \alpha_{n} + \left( \frac{1}{n} \right) \left[r_{t} + \sum_{i=1}^{N}{E(r_{t+i})} \right] + \epsilon_{t}
+\end{align}
+\end{ceqn} em que $\alpha_{n}$ é um termo de prêmio; $r_{t}$ é a taxa atual de juros; $\sum_{i=1}^{N}{E(r_{t+i})}$ é o somatório das expectativas atuais acerca das taxas nos períodos $t+i$; e $\epsilon_{t}$ é um termo de erro aleatório. A Equação \eqref{eq:ettj} demonstra que a taxa de longo prazo depende das expectativas do público sobre a política futura do banco central, além de apontar a baixa relevância da taxa atual. Caso tiver-se que a taxa de juros atual seja próximo de zero, a comunicação sobre a taxa futura esperada se transforma na essência da política monetária \cite{bernanke2004monetary, woodford2005central, blinder2008central}. 
+
+Adicionando uma estrutura macroeconômica criada para ilustrar o papel da comunicação do banco central; e denotando $r_{t}$ como a taxa de juros de curto prazo e $R_{t}$ como a taxa de longo prazo, ambas da Equação \eqref{eq:ettj}, tem-se que a demanda agregada ($D$) depende desses dois fatores, expectativa da inflação ($\pi_{t}^e$) e outros fatores não citados, conforme:
+
+\begin{ceqn}
+\begin{align} \label{eq:ag_demand}
+Y_{t} = D(r_{t} -\pi_{t}^e, R_{t} - \pi_{t}^e,...) + \epsilon_{t}
+\end{align}
+\end{ceqn} 
+
+Sendo que, a oferta agregada pode (não necessariamente) ser definida  como a Curva de Phillips:
+
+\begin{ceqn}
+\begin{align} \label{eq:ag_supply}
+\pi_{t} = \beta E(\pi_{t+1}) + \gamma (Y_{t} - Y_{t}^*) + \epsilon_{t}
+\end{align}
+\end{ceqn} onde $\pi_{t}$ representa a inflação no período $t$; $E(\pi_{t+1})$ é a inflação esperada em $t+1$; $Y_{t}$ é o produto interno bruto real atual; e $Y_{t}^*$ é o produto interno bruto real potencial. Completa-se então o modelo adicionando uma função de reação do banco central, como por exemplo a aplicação da Regra de \citeonline{taylor_rule1993}:
+
+\begin{ceqn}
+\begin{align} \label{eq:taylor_rule}
+(r_{t} - r_{t}^*) = \pi_{t} + \beta_{\pi} (\pi_{t} - \pi_{t}^*) + \beta_{y} (y_{t} - y_{t}^*) + \epsilon_{t}
+\end{align}
+\end{ceqn} tal qual $r_{t}$ é a taxa nominal de curto prazo; $r_{t}^*$ indica a taxa real de equilíbrio; $\pi_{t}^*$ é a taxa meta de inflação do banco central; $y_{t}$ é o $\ln(Y_{t})$; e $y_{t}^*$ é o $\ln(Y_{t}^*)$, isto é, o desvio do produto em relação ao potencial. Tome como exemplo o caso em que o ambiente econômico faz com que as Equações \eqref{eq:ettj}, \eqref{eq:ag_demand} e \eqref{eq:ag_supply} sejam constantes ao longo do tempo (estacionárias); que o banco central seja confiavelmente comprometido com sua função de reação demonstrada pela Equação \eqref{eq:taylor_rule}; e que as expectativas sejam racionais. 
+
+Nesta situação hipótetica irrealista, como levantado em \citeonline{woodford2005central}, a comunicação do Banco Central não teria nenhum papel a desempenhar e dessa forma qualquer padrão observado de como a política monetária fosse conduzida seria corretamente deduzido pelos agentes de mercado, fazendo com que toda comunicação explícita do BC fosse redundante. Sendo assim, considerando transparência do Banco Central abordada em \citeonline{faust_svensson_2001transparency} como a facilidade com que o público consegue deduzir as intenções e metas a partir dos dados observáveis, teria-se um BC totalmente transparente sem divulgação de comunicado algum \cite{blinder2008central}.
+
+Esta conjuntura extrema aponta para algumas características que possuem o potencial de fazer a comunicação do banco central ser importante, sendo elas:
+
+\begin{enumerate}[noitemsep,nosep,labelindent=\parindent,leftmargin=*,label={\alph*}) ] 
+	\item a não estacionariedade (seja da economia ou da regra de condução da política monetária);
+	\item o constante aprendizado no ambiente (do e sobre o Banco Central);
+	\item expectativas não-racionais e/ou assimetria de informação entre os agentes econômicos e o BC
+\end{enumerate}
+
+Uma vez que uma ou mais dessas condições são alcançadas, a comunicação do BC pode importar, e levando em consideração que essas situações são comuns - e não exceções - destaca-se a importância da comunicação. 
+
+Além do mais, é intrinsecamente inevitável o fato de que o BC sabe mais sobre o próprio jeito de pensar do que os agentes econômicos. Não somente isso, como aponta \citeonline{svensson2003taylor_rule}, as decisões tomadas acerca da política monetária dependem de muitas outras coisas além da inflação corrente e hiatos do produto como apontado na Equação \eqref{eq:taylor_rule}. É também extremamente improvável o cenário no qual o Banco Central se agarraria a uma política sem quaisquer mudanças por muito tempo \cite{blinder2008central}.
+
+Conforme levantado por \citeonline{bernanke2004fedspeak} e abordado em \citeonline{blinder2008central}, tem-se também o motivo da comunicação afetar a efetividade da política monetária: quando o público não conhece a função de reação do banco central, e por consequência precisa estimá-la, não há garantia de que a economia convergirá para o equilíbrio de expectativas racionais, uma vez que o processo de aprendizado dos agentes externos afeta o comportamento da economia. Não obstante, os autores apontam que não é prático especificar e explicitar uma regra de política monetária ao qual o BC nunca desviaria independente da circunstância, e neste caso, o problema está no fato de que o número de eventualidades às quais a política do BC deve responder são infinitas e na grande maioria imprevisíveis.
+
+\citeonline{adonias_evaristo2009comunicaccao} apontam que, de acordo com \citeonline{Eijffinger2007}, há três razões para a comunicação de um Banco Central ser relevante. Primeiramente, as expectativas não são racionais. Depois, tem-se informação assimétrica (o BC possui mais informação sobre a economia do que os agentes de mercado), o que justifica a importância que os agentes dão aos comunicados como referência de se ajustar as expectativas. Por fim, na ausência de regras de política e credibilidade da autoridade, a comunicação é o canal de fornecimento de informações aos agentes sobre a condução da política monetária.
+
+Entretanto, há na literatura argumentos favoráveis e desfavoráveis acerca da adoção de uma maior transparência. Entre ideias a favor pode-se citar uma política monetária mais previsível, aumentando assim sua eficácia, assim como aponta \citeonline{bernanke2004japan} e um aumento na credibilidade do banco central no médio e longo prazo, de acordo com \citeonline{issing2005}.
+
+Enquanto para ideias contrárias, destaca-se o fato de que transparência é desejável somente se possuir uma relação positiva com uma política monetária mais eficaz, como elucidado por \citeonline{issing2005}. Além disso, \citeonline{woodford2005central} e \citeonline{issing2005}, levantam que uma maior previsibilidade advinda de mais transparência, não necessariamente torna a política monetária mais eficaz, uma vez que a ação da política monetária é sempre contingente às condições econômicas \cite{adonias_evaristo2009comunicaccao}. 
+
+\subsection{Atas do Copom como mecanismo de comunicação e transparência: uma revisão da literatura}
+
+O Banco Central possui uma função principal explícita, que é a de controlar a inflação, sendo o controle da atividade econômica, um objetivo implícito. Para poder controlar a taxa inflacionária, o BCB se utiliza da taxa básica de juros, a taxa Selic. Quanto mais elevada se está a taxa de inflação, mais se faz necessário elevar a taxa básica de juros de uma economia, estimulando assim uma maior poupança, resultando em menor consumo ao passo que o custo do crédito aumenta, interferindo diretamente na atividade econômica.
+
+A disseminação de uma abordagem mais transparente na condução da política monetária possui, com grande relevância, a adoção de práticas do Regime de Metas de Inflação (RMI) como arcabouço principal, mesmo não sendo restrito a esse regime. Apesar disso, há exemplos de bancos centrais transparentes que não adotam o regime de metas de inflação, como o BCE e o Fed \cite{issing2005}. 
+
+Em regimes de política monetária orientados por regras, se os agentes do mercado possuem um entendimento suficiente da regra vigente, o nível requisitado de transparência é menor. Neste caso, os simples atos da condução da política monetária seriam explicações o bastante, reduzindo assim a necessidade da autoridade monetária se pronunciar. Dessa forma, considerando que o RMI implica arbitrariedade aos que conduzem a política monetária, a comunicação do Banco Central deve possuir papel fundamental em coordenar e administrar as expectativas dos agentes de mercado \cite{adonias_evaristo2009comunicaccao}.
+
+Conforme \citeonline{issing2005} aponta, vale salientar que por mais que seja explicitamente informado um alvo numérico para a taxa de inflação, caso incorra-se em possíveis desvios da inflação em relação a meta, a forma e trajeto de ajuste são selecionados discricionariamente. Na verdade, quando trata-se da relação entre a discrição e regra, raramente tem-se um Banco Central seguindo rigorosamente as regras, por causa do chamado viés inflacionário, isto é, o impulso de se diminuir o desemprego ou aumentar o produto. Dessa forma, quando o RMI não possui credibilidade, a tendência é resultar na discrição, aumentando a oferta de moeda e por consequência gerando uma taxa de inflação maior. 
+
+No caso brasileiro, as atas do Copom servem como a principal ferramenta de comunicação do BCB, não só no âmbito nacional, como também para o exterior. É por meio destas que a autoridade monetária discorre acerca do processo de tomada de decisão da política monetária, mantendo maior previsibilidade sobre as expectativas dos agentes econômicos, apresentando dados macroeconômicos pertinentes, discorrendo sobre a inflação, decidindo sobre o nível da taxa de juros básica e salientando sobre as perspectivas futuras \cite{costa2010mercado}.
+
+\section{Mineração textual} \label{section:mineracao_textual}
+
+Mineração textual\footnote[3]{Também conhecido como: (i) \textit{text mining}, (ii) mineração de textos} é a dinâmica que utiliza da tecnologia de Processamento de Linguagem Natural (NLP) para organizar e converter dados textuais disponíveis em documentos e grandes bases de dados, por meio de ferramentas estatísticas e computacionais, possibilitando a quantificação do texto. O principal objetivo desta técnica é extrair significados de uma forma que um ser humano sozinho não teria capacidade, mas uma máquina sim, obtendo padrões nos textos que não seriam encontrados \textit{a priori} \cite{bholat_etal2015}.
+
+Com a grande quantidade de informações disponíveis na internet, a ciência econômica - que ainda não possui a devida inserção e aderência de técnicas de mineração textual - pode se beneficiar, e muito, cada vez mais dessa disponibilidade toda. Um dos possíveis usos, é por parte dos bancos centrais, extraindo informações por métodos não usuais, de fontes diversas, para inferir de forma mais completa conjunturalmente sobre questões monetárias e financeiras. Como enunciado em \citeonline{bholat_etal2015}: 
+
+\begin{citacao}
+
+A mineração textual pode valer o investimento dos bancos centrais porque essas técnicas tornam tratável uma série de fontes de dados que são importantes para avaliar a estabilidade monetária e financeira e não podem ser analisadas quantitativamente por outros meios. Os principais dados de texto para bancos centrais incluem artigos de notícias, contratos financeiros, mídia social, supervisão e inteligência de mercado e relatórios escritos de vários tipos. \cite{bholat_etal2015}.
+
+\end{citacao}
+
+Alguns estudos já aplicaram técnicas de mineração textual - e suas derivações - para inferir sobre documentos textuais no âmbito econômico. \citeonline{chague2015central} elaboraram um estudo para a economia brasileira, onde analisaram como a comunicação do BCB afeta a Estrutura a Termo da Taxa de Juros (ETTJ) estimada. Por meio da criação de um Fator de Otimismo (OF), quando as atas do Copom indicavam otimismo, a OF aumentava, e as taxas de juros de mais longo prazo diminuiam e vice-versa. Seus resultados sugeriram que a comunicação da autoridade monetária possuem impactos efetivos nas expectativas de mercado.
+
+Como aborda \citeonline{hc_costa2016}, em busca de uma nova medida de inflação para países cujos índices das autoridades oficiais perderam muita credibilidade, \citeonline{cavallo2013online} coletou com mineração textual dados de 2007 a 2011 das páginas dos principais supermercados do Brasil, Chile, Colômbia, Venezuela e Argentina; e combinando com pesos oficiais das categorias dos produtos, criou um índice de inflação alternativo ao divulgado oficialmente. Para os quatro primeiros países incluídos na lista, o índice se aproximou tanto em nível como em dinâmica temporal da inflação oficial. Para a Argentina, encontrou-se grande discrepância entre o índice de preços online e a divulção oficial, que mostrou-se persistente em todo o período analisado.
+
+Baseado na literatura internacional sobre mensuração de incerteza e seus efeitos na economia, \citeonline{ferreira2017incerteza} desenvolveram o Indicador de Incerteza Econômica - Brasil (IIE-Br), cuja Fundação Getúlio Vargas (FGV) divulga mensalmente. O indicador criado apontou forte relação com grandes momentos de incerteza vividos pelo Brasil, e após abordagem econométrica, observou-se que choques de incerteza produzem efeitos negativos sobre a atividade econômica e produção industrial.
+
+Já no artigo elaborado por \citeonline{Omotosho2019}, são avaliados os comunicados do comitê de política monetária do Banco Central da Gana (BCG) no período entre 2018 e 2019. Aplicando técnicas de mineração textual, análise de sentimentos e modelagem de tópicos (\textit{Alocação Latente de Dirichlet}) proposto por \citeonline{LDA_blei2003}, obteve resultados de que, a partir da amostra utilizada, foi possível perceber evidências de uma melhora de transparência da política monetária por parte do BCG. 
+
+Destaca-se também que a composição das frases e utilização das palavras ficaram menos complexas, mostrando que os comunicados ficaram mais fáceis de serem lidos com o passar do tempo. Além disso, termos como \textit{'inflação}, \textit{'pib'}, \textit{'monetário'} ficaram ressaltados, indicando consistência entre a estratégia de comunicação do BCG e seus objetivos. Por fim, por meio da análise de sentimentos e modelagem de tópicos, observou-se um \textit{score} líquido médio no período analisado de $3,90$\%, representando que os comunicados do BCG indicam uma perspectiva positiva para a economia \cite{Omotosho2019}.
+
+Enquanto na maioria da literatura que faz do uso dessas técnicas, assume-se que banqueiros centrais fazem seus comunicados e depois observa-se as reações do mercado em relação à comunicação, a análise de \citeonline{zahner_J2021}, por exemplo, foca nas mudanças na comunicação em resposta à variação da atividade econômica.
+
+Levando em consideração duas das funções mais importantes de um banco central, que é controlar a inflação (sendo essa a principal) e controlar o nível da atividade econômica, são difíceis de quantificar por padrão, \citeonline{zahner_J2021}, a partir do uso de mineração textual, extraiu dados de comunicados públicos de 2002 até 2020 do BCE, criou um índice de sentimentos e aplicou metodologias econométricas sugeridas por \citeonline{Shapiro2019} para estimar os objetivos relacionados às principais funções do BCE. 
+
+Seus estudos resultaram na descoberta de que os comunicados estão mais em linha com a função de bancos centrais preferirem favorecer melhores condições econômicas, independente do nível da economia e de que a inflação alvo ao longo do período rodeia levemente acima de $2,00$\%. Não só isso, seu trabalho revelou que a comunicação do BCE responde igualmente em variações da atividade econômica, assim como em variações da taxa de inflação, sendo que os comunicados ficam cada vez mais pessimistas com o passar do tempo \cite{zahner_J2021}.
+
+Dessa maneira, tem-se que técnicas de mineração textual cada vez mais vem sendo usadas na esfera macroeconômica, seja por meio de aplicações estatísticas ou seja por meio de métodos de \textit{Machine Learning}. Sendo assim, com o crescente nível de transparência dos comunicados emitidos pelos bancos centrais, estes verificam-se como uma propícia fonte de análise de sentimentos textuais, não só por sua influência nas expectativas dos agentes, mas também pela disponibilidade e avanço tecnológico, possibilitando a criação de algoritmos que facilitem e avancem na pesquisa focada no uso de mineração textual (e suas ramificações) para a extração de padrões, significados e relações úteis a partir de documentos que discorrem sobre a condução da política monetária \cite{Shapiro2019}.

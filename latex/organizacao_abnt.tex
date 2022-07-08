@@ -1,0 +1,100 @@
+%% abtex2-modelo-trabalho-academico.tex, v-1.9.6
+
+\documentclass[
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto e verso (twoside). Oposto a (oneside)
+	a4paper,			% tamanho do papel. 
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	sumario=abnt-6027-2012,
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	fleqn,				% equações alinhadas a esquerda
+	]{abntex2}
+
+\input{pacotes_basicos}	% inclui pacotes básicos 
+
+
+% informações de dados para CAPA e FOLHA DE ROSTO
+
+% título
+\titulo{\textit{Text Mining} nas atas do Copom para criação de um índice de sentimento e averiguação de causalidade com variáveis macroeconômicas}%
+
+\autor{Cairê {}Britto Barletta}%
+\orientador{Prof.ª Dr.ª Marianne {}Zwilling Stampe}%
+
+% o símbolo {} indica o sobrenome para a ficha catalográfica.
+
+\instituicao{Universidade do Estado de Santa Catarina, Centro de Ciências da Administração e Socioeconômicas, Programa de Graduação em Ciências Econômicas}%
+
+\tipotrabalho{Monografia (Graduação)}
+
+\preambulo{Trabalho de Conclusão de Curso apresentado ao curso de Ciências Econômicas, do Centro de Ciências da Administração e Socioeconômicas, da Universidade do Estado de Santa Catarina, como requisito parcial para a obtenção do grau de Bacharel em Ciências Econômicas.}
+
+\local{Florianópolis}%
+
+\data{\the\year}%
+
+% compila o indice
+\makeindex
+
+
+% início do documento
+
+\begin{document}
+
+\selectlanguage{brazil}
+\frenchspacing  % retira espaço extra obsoleto entre as frases.
+
+
+% ELEMENTOS PRÉ-TEXTUAIS
+
+\pretextual
+
+\include{pre_textuais/capa}					% Elemento Obrigatório
+\include{pre_textuais/folha_rosto}	    	% Elemento Obrigatório
+
+% Caso não utilize a Ficha Catalográfica entre na folha de rosto e retire o * de dentro do arquivo FolhadeRosto
+%\include{pre_textuais/ficha_catalografica}	    % Elemento Obrigatório (Verso da Folha)
+%\include{pre_textuais/errata}				    % Elemento Opcional
+\include{pre_textuais/folha_aprovacao}		    % Elemento Obrigatório
+\include{pre_textuais/dedicatoria}			    % Elemento Opcional
+\include{pre_textuais/agradecimentos}		    % Elemento Opcional
+%\include{pre_textuais/epigrafe}				% Elemento Opcional
+\include{pre_textuais/resumo}			    	% Elemento Obrigatório
+\include{pre_textuais/abstract}				    % Elemento Obrigatório
+\include{pre_textuais/listas}			    	% Elemento Opcional
+\include{pre_textuais/sumario}			        % Elemento Obrigatório
+
+
+% ELEMENTOS TEXTUAIS
+
+\textual
+
+\pagestyle{PagNumReduzida}						% para cabeçalho somente com numeração de página 10pt
+\aliaspagestyle{chapter}{PagNumReduzida}		% numeração da primeira página com tamanho igual ao resto da numeração
+% ref.: https://groups.google.com/g/abntex2/c/CP7g8ZMgi-c/m/KjfEnn5b9a4J
+
+% estrutura do trabalho
+
+\include{textuais/1_introducao}
+\include{textuais/2_revisao}
+\include{textuais/3_metodologia}
+\include{textuais/4_resultados}
+\include{textuais/5_consideracoes}
+
+
+% ELEMENTOS PÓS-TEXTUAIS
+
+\postextual
+
+% referências bibliográficas
+\bibliography{referencias}	                    % Elemento Obrigatório
+
+%\include{pos_textuais/glossario}			    % Elemento Opcional
+\include{pos_textuais/apendices}			    % Elemento Opcional
+%\include{pos_textuais/anexos}			        % Elemento Opcional
+%\include{pos_textuais/indice_remissivo}		% Elemento Opcional
+
+\end{document}

@@ -1,0 +1,34 @@
+% introdução
+
+\chapter{Introdução}
+
+Com cada vez mais disponibilidade, variedade, volume e velocidade da produção de dados e avanço nos recursos tecnológicos, fez-se necessário a criação de técnicas que armazenem, tratem e analisem esses dados de maneira eficaz. No âmbito da ciência da economia, apesar de tais técnicas serem ainda poucos exploradas, pode-se esperar uma grande evolução na implicação de como mensurar os efeitos econômicos, levando em consideração que cada vez mais grandes quantidades de dados estão sendo dispostas, tanto por instituições públicas quanto privadas \cite{hc_costa2016}.
+
+Mais especificamente falando, pode-se utilizar de dados obtidos através dos comunicados oficiais da autoridade monetária brasileira, que visa principalmente conduzir a política monetária do país, controlando a inflação em determinado nível estável, além de afetar diretamente a situação da atividade econômica. Dessa forma, como problema de pesquisa, o trabalho por se tratar de método quantitativo-estatístico, se propõe a quantificar os textos emitidos, a fim de mensurar os impactos da comunicação nas expectativas dos agentes econômicos em variáveis macroeconômicas, permitindo o estabelecimento de relações e causalidades existentes.
+
+Este estudo tem como objetivo principal a criação de um índice de sentimentos, com base nos comunicados oficiais do Banco Central do Brasil (BCB), para medir quantitativamente e inferir se de fato, e como, a comunicação da autoridade monetária surte efeitos em variáveis macroeconômicas brasileiras, sendo elas a taxa básica de juros descontada da inflação, isto é, a taxa básica de juros real; a atividade econômica e a produção industrial. O período da análise foi ínicio 2006 até final de 2022, incluindo da ata 116 até a ata 246.
+
+Como objetivos secundários, engloba-se o procedimento de raspagem de dados \textit{web} para coleta dos dados, bem como técnicas de mineração textual (quantificação de textos), aplicados aos comunicados de condução da política monetária brasileira. 
+
+Fazendo uso destas ferramentas, se acessou e extraiu-se os arquivos referentes às atas do Comitê de Política Monetária (Copom), disponibilizados no site do BCB, de forma automatizada. Em seguida, os dados foram tratados e com base em dicionários léxicos, proposto primeiramente por \citeonline{stone_etal1966}, foram atribuídos \textit{scores} de teor positivo ou negativo para as atas, sendo possível a criação de um índice de sentimento ao longo do período analisado.
+
+Por fim, foram aplicadas técnicas econométricas tradicionais em séries temporais, abordadas em \citeonline{gujarati_ecn2011}, \citeonline{bueno2008} e outros autores, visando contribuir para a robustez dos resultados empíricos, utilizando modelos de Vetores Autorregressivos (VAR) e testes estatísticos necessários no índice de sentimentos criado, relacionado-o à variáveis macroeconômicas de interesse, obtendo as respectivas Funções de Impulso-Resposta (IRF) e inferindo ou não a causalidade de Granger, a partir dos choques efetuados. 
+
+Com isso, considerando que o objetivo geral é analisar quantitativamente os comunicados do BCB e mensurar os impactos nas variáveis macroeconômicas sugeridas, de forma enumerada, pode-se organizar os objetivos específicos da seguinte maneira:
+
+\begin{enumerate}[noitemsep,nosep,labelindent=\parindent,leftmargin=*,label={\alph*}) ] 
+	\item criação de um algoritmo de raspagem de dados \textit{web} que baixará de forma automatizada todas as atas do Copom, que serão utilizadas como uma das base de dados, organizando-as em um \textit{Corpus} (conjunto de documentos);
+	\item re-agrupar as palavras em padrões (\textit{token}), atribuindo um sentido positivo ou negativo;
+	\item criar o índice de sentimentos, com base no conjunto de palavras, quantificando em valores;
+	\item relacionar o índice defasado com as variáveis macroecônomias, utilizando modelos VAR, para quantificar os impactos dos comunicados determinado tempo à frente.
+\end{enumerate}
+
+Objetivos estes que basearam-se na importância da comunicação do Banco Central, que conforme elucidam \citeonline{blinder2008central}, pode ser definida como qualquer informação disponibilizada para o público em relação à condução da política monetária.
+
+Nos EUA, anterior ao período de 1987, era considerado que ao pegar o mercado de surpresa, a política monetária teria efeitos mais eficazes. \citeonline{woodford2005central}, demonstrou em seu estudo, que uma comunicação bem feita por parte dos bancos centrais é pré-requisito básico na condução das políticas, uma vez que os principais tomadores de decisão em uma economia olham para o futuro, dando bons motivos para o comprometimento com a explicação ao público das decisões tomadas.
+
+Além disso, a inferência que os agentes do mercado possuem sobre o Banco Central se concentra no fato da confiança estabelecida na capacidade de condução da instituição manter os preços e a economia estáveis, onde essa credibilidade passa por processo de construção, preservada e afirmada por meio de ações e explicações fornecidas ao passar do tempo. Quanto melhor esse papel for cumprido, de defensor do equilíbrio da moeda, maior a reputação da entidade \cite{issing2002should}.
+
+Por conseguinte, no entendimento de \citeonline{winkler2000transp}, o primeiro ato realizado por um Banco Central que visa o aumento de transparência deveria ser em tornar suas ações e visão de mundo entendida por todos, além de fornecer a informação de modo que fosse compreendida pelos diferentes agentes.
+
+Por isso, assume-se de grande importância a pesquisa acerca do impacto dos comunicados emitidos sobre as variáveis macroeconômicas, a fim de ter uma quantificação da influência, e outras características dos informes (relações, correlações, causalidades etc).
