@@ -228,27 +228,27 @@ No VAR($2$), considerando todas as variáveis como endógenas, obteve-se então 
 
 %Para o modelo de VAR($1$), nos testes individuais de causalidade de Granger, nenhuma variável apresentou Granger-causar o índice de sentimentos criado para um nível de $\alpha = 5,0\%$. No sentido do índice Granger-causar as variáveis, apenas a atividade econômica e a produção industrial apresentaram rejeição à $H_{0}$ de não-causalidade, porém apenas para um $\alpha = 10,0\%$. Entretanto, para o teste conjunto de causalidade tem-se para todas as variáveis um p-valor > $0,05$, dessa forma rejeitando a hipótese nula de não-causalidade, ou seja, todas as variáveis Granger-causam o índice de sentimentos.
 
-No modelo VAR($2$), para os testes individuais de causalidade de Granger, nenhuma variável apresentou Granger-causar o índice de sentimentos criado para um nível de $\alpha = 5,0\%$. Considerando o índice Granger-causar as variáveis, conforme observa-se na Figura \ref{figure:granger_individual_model2}, tem-se que apenas a PIM-PF é afetada, para um $\alpha = 5,0\%$, sendo seu p-valor = $0,02$.
+No modelo VAR($2$), para os testes individuais de causalidade de Granger, nenhuma variável apresentou Granger-causar o índice de sentimentos criado para um nível de $\alpha = 5,0\%$. Considerando o índice Granger-causar as variáveis, conforme observa-se na Tabela \ref{table:granger_individual_model2}, tem-se que apenas a PIM-PF é afetada, para um $\alpha = 5,0\%$, sendo seu p-valor = $0,02$.
 
-\begin{figure}[hbtp]
+\begin{table}[hbtp]
 	\centering
-	\caption{Testes individuais de causalidade de Engle-Granger para o VAR($2$)} \label{figure:granger_individual_model2}
+	\caption{Testes individuais de causalidade de Engle-Granger para o VAR($2$)} \label{table:granger_individual_model2}
 	\includegraphics[scale = 0.45]{figuras/granger_individual_model2.PNG}
 	\fonte{Elaboração do autor.}
-\end{figure}
+\end{table}
 
-Para o teste em conjunto de causalidade de Granger, tem-se um p-valor > $0,05$ para as variáveis de taxa de juros real e produção industrial, assim essas variáveis Granger-causam o índice, apesar de que para a atividade econômica o p-valor = $0,04$, fazendo com que o IBC-Br não Granger-cause o índice criado, como apresentado na Figura \ref{figure:granger_conjunto_model2}.
+Para o teste em conjunto de causalidade de Granger, como apresentado na Tabela \ref{table:granger_conjunto_model2}, tem-se um p-valor > $0,05$ para as variáveis da diferença da taxa de juros real e produção industrial, assim essas variáveis não Granger-causam o índice e as outras variáveis, apesar de que para a atividade econômica o p-valor = $0,04$, fazendo com que o IBC-Br possa Granger-causar o índice criado, tanto quanto as outras variáveis, ou todas, entretanto como visto no teste individual, o IBC-Br não Granger-causa o índice.
 
-\begin{figure}[hbtp]
+\begin{table}[hbtp]
 	\centering
-	\caption{Teste conjunto de causalidade de Engle-Granger para o VAR($2$)} \label{figure:granger_conjunto_model2}
+	\caption{Teste conjunto de causalidade de Engle-Granger para o VAR($2$)} \label{table:granger_conjunto_model2}
 	\includegraphics[scale = 0.50]{figuras/granger_conjunto_model2.PNG}
 	\fonte{Elaboração do autor.}
-\end{figure}
+\end{table}
 
 \subsection{Funções impulso-resposta (IRF)}
 
-A análise das Funções de Impulso-Resposta demonstrou, conforme a Figura \ref{figure:irf_indice_indice_model_2} aponta que, dado um choque positivo no índice, a resposta do próprio índice sofre positivamente segundo o tamanho do choque dado, de forma significativa. Salienta-se que para o VAR($2$), a partir do 6º período, o choque deixa-se de ser significante para um intervalo de confiança de $95,0\%$.
+A análise das Funções de Impulso-Resposta demonstrou, conforme a Figura \ref{figure:irf_indice_indice_model_2} aponta que, dado um choque positivo no índice, a resposta do próprio índice sofre positivamente com impacto decrescente, segundo o tamanho do choque dado, de forma significativa. Salienta-se que para o VAR($2$), a partir do 6º período, o choque deixa-se de ser significante para um intervalo de confiança de $95,0\%$.
 
 \begin{figure}[hbtp]
 	\centering
@@ -258,7 +258,7 @@ A análise das Funções de Impulso-Resposta demonstrou, conforme a Figura \ref{
 \end{figure}
 
 
-Já, a partir de um choque efetuado no índice em relação à diferença dos juros reais, como observa-se na Figura \ref{figure:irf_indice_selic_model_2}, tem-se uma resposta negativa, que aumenta com o passar dos períodos. Entretanto, para o VAR($2$), o choque é somente significativo entre o 4º e 5º período, para $95,0\%$ de confiança.
+Já, a partir de um choque efetuado no índice em relação à diferença dos juros reais, como observa-se na Figura \ref{figure:irf_indice_selic_model_2}, tem-se uma resposta negativa até o 4º período (sendo este um ponto de inflexão), aumentado com o passar dos períodos. Entretanto, para o VAR($2$), o choque é somente significativo entre o 4º e 5º período, para $95,0\%$ de confiança.
 
 \begin{figure}[hbtp]
 	\centering
@@ -278,8 +278,6 @@ Outrossim, quando se atenta à resposta da atividade econômica dado um choque n
 
 Por fim, dado um impulso no índice, a resposta da produção industrial se assemelha com a da atividade econômica, onde como se observa na Figura \ref{figure:irf_indice_pimpf_model_2}, há um pico no 5º período, onde a partir dele, os choques deixam de ser significativos.
 
-\pagebreak{}
-
 \begin{figure}[hbtp]
 	\centering
 	\caption{IRF do VAR($2$): Índice $\rightarrow$ PIM-PF} \label{figure:irf_indice_pimpf_model_2}
@@ -287,6 +285,6 @@ Por fim, dado um impulso no índice, a resposta da produção industrial se asse
 	\fonte{Elaboração do autor.}
 \end{figure}
 
-Em \citeonline{ferreira2017incerteza}, são disponibilizados apenas os resultados das IRF de atividade econômica e produção industrial, dado um choque no IIE-Br, onde ambas respondem negativamente, com pequenos intervalos significantes, semelhantes aos resultados do trabalho de \citeonline{bloom2009uncertainty}. As possíveis divergências com os resultados obtidos neste trabalhao, provavelmente se dão, pois, os autores criaram índices de incerteza da economia e não um índice de sentimentos das atas do Copom. Não só isso, os autores contemplaram um número maior de variáveis, como câmbio, desemprego e preços de commodities, além de impor uma restrição de ordenamento das variáveis, o que ia além da proposta deste trabalho. Interessante apontar que, por ainda serem incipientes os estudos que relacionam mineração textual, análise de sentimentos e economia, os resultados podem servir como norteadores de alguma forma.
+Em \citeonline{ferreira2017incerteza}, são disponibilizados apenas os resultados das IRF de atividade econômica e produção industrial, dado um choque no IIE-Br, onde ambas respondem negativamente, com pequenos intervalos significantes, semelhantes aos resultados do trabalho de \citeonline{bloom2009uncertainty}. As possíveis divergências com os resultados obtidos neste trabalho, provavelmente se dão, pois, os autores criaram índices de incerteza da economia e não um índice de sentimentos das atas do Copom. Não só isso, os autores contemplaram um número maior de variáveis, como câmbio, desemprego e preços de commodities, além de impor uma restrição de ordenamento das variáveis, o que ia além da proposta deste trabalho. Interessante apontar que, por ainda serem incipientes os estudos que relacionam mineração textual, análise de sentimentos e economia, os resultados podem servir como norteadores de alguma forma.
 
-Dessa maneira, conclui-se que por meio de choques aos sentimentos dos comunicados das atas do Copom, a taxa de juros básica acumulada em doze meses, descontada da taxa de inflação (também acumulada em doze meses), sofre negativamente, ao qual se estabiliza conforme se avança nos períodos. Entretanto, quando se olha para a atividade econômica e para a produção industrial, percebe-se que a resposta é positiva, também se estabilizando em torno de zero conforme o avanço do tempo, visto que os choques não possuem efeitos permanentes em séries temporais que possuem a característica de estacionariedade. 
+Dessa maneira, conclui-se que por meio de choques aos sentimentos dos comunicados das atas do Copom, a diferença da taxa de juros básica acumulada em doze meses, descontada da taxa de inflação (também acumulada em doze meses), sofre negativamente, ao qual se estabiliza conforme se avança nos períodos. Entretanto, quando se olha para a atividade econômica e para a produção industrial, percebe-se que a resposta é positiva com impactos decrescentes, também se estabilizando em torno de zero conforme o avanço do tempo, visto que os choques não possuem efeitos permanentes em séries temporais que possuem a característica de estacionariedade. 
