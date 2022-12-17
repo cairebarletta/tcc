@@ -111,10 +111,10 @@ copom_text_tf_idf %>%
 
 #sentiment index
 copom_sentiment_index %>%
-  dplyr::mutate(sentiment_color = ifelse(sentiment_index > 0.5, colors[1], colors[6])) %>%
+  #dplyr::mutate(sentiment_color = ifelse(sentiment_index > 0.5, colors[1], colors[6])) %>%
   ggplot2::ggplot(aes(x = date,
                       y = sentiment_index,
-                      color = sentiment_color,
+                      color = colors[1],
                       group = 1)) +
   ggplot2::geom_line(size = 1.25) +
   ggplot2::scale_color_identity() +
